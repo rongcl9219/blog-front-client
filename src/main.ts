@@ -20,6 +20,5 @@ app.config.globalProperties.$notify = ElNotification;
 
 Core.component(app, globalComponents);
 Core.directive(app, globalDirectives);
-Core.mixin(app, globalMixins);
 
-app.use(store).use(router).mount('#app');
+app.use(store).use(router).mixin(globalMixins).mount('#app');

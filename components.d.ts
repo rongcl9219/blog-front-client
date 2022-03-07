@@ -4,14 +4,27 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Aside: typeof import('./src/components/Layout/Aside/index.vue')['default']
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
+    ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
+    ElDivider: typeof import('element-plus/es')['ElDivider']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     Emoji: typeof import('./src/components/Emoji/index.vue')['default']
+    Footer: typeof import('./src/components/Layout/Footer/index.vue')['default']
+    Header: typeof import('./src/components/Layout/Header/index.vue')['default']
+    Layout: typeof import('./src/components/Layout/index.vue')['default']
+    LinkTab: typeof import('./src/components/Layout/components/LinkTab.vue')['default']
+    Main: typeof import('./src/components/Layout/Main/index.vue')['default']
     MdEditor: typeof import('./src/components/MdEditor/index.vue')['default']
     NoData: typeof import('./src/components/NoData/index.vue')['default']
     PageLoading: typeof import('./src/components/PageLoading/index.vue')['default']
+    Slider: typeof import('./src/components/Layout/Header/components/Slider.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
+    Theme: typeof import('./src/components/Layout/Header/components/Theme.vue')['default']
     ViewerImg: typeof import('./src/components/ViewerImg/index.vue')['default']
+    WebInfo: typeof import('./src/components/WebInfo/index.vue')['default']
   }
 }
 

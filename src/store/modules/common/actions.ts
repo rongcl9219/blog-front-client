@@ -1,9 +1,10 @@
 import { ActionTree, Commit } from 'vuex';
 import { CommonState } from './states';
 import { RootState } from '../../index.d';
-import { SET_WEB_INFO } from './types';
+import { SET_WEB_INFO, SET_SIDEBAR, SET_HOME_ASIDE, SET_THEME } from './types';
 import { CustomResponse } from '@/core/request/type';
 import { CommonApi } from '@/api';
+import { cacheThemeInfo } from '@/core/storageCache';
 
 const actions: ActionTree<CommonState, RootState> = {
     /**
@@ -20,6 +21,16 @@ const actions: ActionTree<CommonState, RootState> = {
                     reject(error);
                 });
         });
+    },
+    toggleSideBar({ commit }: { commit: Commit }) {
+        commit(SET_SIDEBAR);
+    },
+    toggleHomeAside({ commit }: { commit: Commit }) {
+        commit(SET_HOME_ASIDE);
+    },
+    setTheme({ commit }: { commit: Commit }, theme: string) {
+        cacheThemeInfo.save(theme);
+        commit(SET_THEME, theme);
     }
 };
 

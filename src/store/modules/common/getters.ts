@@ -11,6 +11,12 @@ const getters: GetterTree<CommonState, RootState> = {
     },
     getTheme: (state) => {
         return state.theme;
+    },
+    getSidebarOpen: (state) => {
+        return state.sidebarOpen;
+    },
+    getHomeAside: (state) => {
+        return state.homeAside;
     }
 };
 

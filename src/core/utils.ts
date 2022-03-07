@@ -10,10 +10,6 @@ export const directive = (app: any, directives: any) => {
     });
 };
 
-export const mixin = (app: any, mixins: any) => {
-    app.mixin(mixins);
-};
-
 export const plugin = (app: any, plugins: Array<any>) => {
     plugins.forEach((pluginItem) => {
         app.use(pluginItem[pluginItem.name], pluginItem.options || {});
