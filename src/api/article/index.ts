@@ -1,5 +1,5 @@
-import Abstract from "@/core/request/http";
-import { ArticleList, ArticleInfo } from "./types";
+import Abstract from '@/core/request/http';
+import { ArticleList } from './types';
 
 /**
  * @description 文章接口
@@ -11,8 +11,8 @@ class ArticleApi extends Abstract {
      */
     getArticleList(queryParams: ArticleList) {
         return this.fetchGet({
-            url: "/getArticleList",
-            params: queryParams,
+            url: '/getArticleList',
+            params: queryParams
         });
     }
 
@@ -22,8 +22,8 @@ class ArticleApi extends Abstract {
      */
     getArticleInfo(articleId: string) {
         return this.fetchGet({
-            url: "/getArticleInfo",
-            params: {articleId},
+            url: '/getArticleInfo',
+            params: { articleId }
         });
     }
 
@@ -33,8 +33,8 @@ class ArticleApi extends Abstract {
      */
     getContent(articleId: string) {
         return this.fetchGet({
-            url: "/getContent",
-            params: {articleId},
+            url: '/getContent',
+            params: { articleId }
         });
     }
 
@@ -43,7 +43,7 @@ class ArticleApi extends Abstract {
      */
     getCurrentArticles() {
         return this.fetchGet({
-            url: "/admin/getCurrentArticles",
+            url: '/admin/getCurrentArticles'
         });
     }
 }

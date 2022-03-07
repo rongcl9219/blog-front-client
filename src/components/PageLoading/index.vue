@@ -23,16 +23,15 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'PageLoading',
-    props: {
-        loadingText: {
-            type: String,
-            default: '加载中...'
-        }
-    }
-};
+<script lang="ts">
+import { Vue, Options, Prop } from 'vue-property-decorator';
+
+@Options({
+    name: 'PageLoading'
+})
+export default class PageLoading extends Vue {
+    @Prop({ type: String, default: '加载中...' }) loadingText?: string;
+}
 </script>
 
 <style scoped lang="scss">

@@ -1,4 +1,4 @@
-import Abstract from "@/core/request/http";
+import Abstract from '@/core/request/http';
 
 /**
  * @description 网站信息接口
@@ -9,7 +9,7 @@ class WebInfoApi extends Abstract {
      */
     getWebInfo() {
         return this.fetchGet({
-            url: "/getWebInfo",
+            url: '/getWebInfo'
         });
     }
 }

@@ -26,29 +26,30 @@
 </template>
 
 <script lang="ts">
-export default {
-    name: 'EmojiIndex'
-};
-</script>
-<script setup lang="ts">
-import { ref } from 'vue';
-import type { ElPopover } from 'element-plus';
+import { Vue, Options, Emit, Ref } from 'vue-property-decorator';
 import emojiArr from './emojiData';
+import { ElPopover } from 'element-plus';
 
-const emits = defineEmits(['onEmojiClick']);
+@Options({
+    name: 'EmojiIndex'
+})
+export default class EmojiIndex extends Vue {
+    get emojiArr() {
+        return emojiArr;
+    }
 
-type PopoverInstance = InstanceType<typeof ElPopover>;
+    @Ref('popoverRef') readonly popoverRef!: typeof ElPopover;
 
-const popoverRef = ref<PopoverInstance>();
+    @Emit('onEmojiClick')
+    handleSvgItem(val: string) {
+        return val;
+    }
 
-const handleSvgItem = (val: string) => {
-    emits('onEmojiClick', val);
-};
-
-const handleItem = (key: string) => {
-    popoverRef.value?.hide();
-    handleSvgItem(`[${key}]`);
-};
+    handleItem(key: string) {
+        this.popoverRef.hide();
+        this.handleSvgItem(`[${key}]`);
+    }
+}
 </script>
 
 <style scoped lang="scss">

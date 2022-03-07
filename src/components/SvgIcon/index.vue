@@ -4,26 +4,27 @@
     </svg>
 </template>
 
-<script lang="ts" setup>
-import { toRefs, computed } from 'vue';
-const props = defineProps({
-    iconClass: {
-        type: String,
-        required: true
-    },
-    className: String
-});
+<script lang="ts">
+import { Vue, Options, Prop } from 'vue-property-decorator';
 
-const { iconClass, className } = toRefs(props);
+@Options({
+    name: 'svg-icon'
+})
+export default class SvgIcon extends Vue {
+    @Prop({ type: String, default: '', required: true }) iconClass!: string;
+    @Prop({ type: String, default: '' }) className?: string;
 
-const iconName = computed(() => {
-    return `#icon-${iconClass?.value}`;
-});
+    get iconName() {
+        return `#icon-${this.iconClass}`;
+    }
 
-const svgClass = computed(() => {
-    return 'svg-icon ' + (className?.value || '');
-});
-
+    get svgClass() {
+        if (this.className) {
+            return 'svg-icon ' + this.className;
+        }
+        return 'svg-icon';
+    }
+}
 </script>
 
 <style scoped>

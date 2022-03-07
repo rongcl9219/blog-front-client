@@ -1,6 +1,5 @@
-import Abstract from "@/core/request/http";
-import { Pagination } from "@/api/commonTypes";
-import { ClassInfo } from "./types";
+import Abstract from '@/core/request/http';
+import { Pagination } from '@/api/commonTypes';
 
 /**
  * @description 分类接口
@@ -12,8 +11,8 @@ class ClassApi extends Abstract {
      */
     getClassList(pagination: Pagination) {
         return this.fetchGet({
-            url: "/admin/getClassList",
-            params: pagination,
+            url: '/admin/getClassList',
+            params: pagination
         });
     }
 
@@ -23,8 +22,8 @@ class ClassApi extends Abstract {
      */
     getClassInfo(classId: string) {
         return this.fetchGet({
-            url: "/admin/getClassInfo",
-            params: {classId},
+            url: '/admin/getClassInfo',
+            params: { classId }
         });
     }
 
@@ -33,7 +32,7 @@ class ClassApi extends Abstract {
      */
     getAllClass() {
         return this.fetchGet({
-            url: "/getAllClass",
+            url: '/getAllClass'
         });
     }
 
@@ -42,7 +41,7 @@ class ClassApi extends Abstract {
      */
     getClass() {
         return this.fetchGet({
-            url: "/getClass",
+            url: '/getClass'
         });
     }
 }

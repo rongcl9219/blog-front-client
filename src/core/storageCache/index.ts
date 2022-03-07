@@ -9,4 +9,4 @@ export const cacheThemeInfo = new StorageCache(KEYS.theme);
 /**
  * 保存用户信息
  */
-export const cacheUserInfo = new StorageCache(KEYS.commentUser, 60 * 60 * 24);
+export const cacheUserInfo = new StorageCache(KEYS.commentUser);

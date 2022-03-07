@@ -1,6 +1,5 @@
-import Abstract from "@/core/request/http";
-import { Pagination } from "@/api/commonTypes";
-import { TagInfo } from "./types";
+import Abstract from '@/core/request/http';
+import { Pagination } from '@/api/commonTypes';
 
 /**
  * @description 标签接口
@@ -12,8 +11,8 @@ class TagClass extends Abstract {
      */
     getTagList(pagination: Pagination) {
         return this.fetchGet({
-            url: "/admin/getTagList",
-            params: pagination,
+            url: '/admin/getTagList',
+            params: pagination
         });
     }
 
@@ -23,8 +22,8 @@ class TagClass extends Abstract {
      */
     getTagInfo(tagId: string) {
         return this.fetchGet({
-            url: "/admin/getTagInfo",
-            params: { tagId },
+            url: '/admin/getTagInfo',
+            params: { tagId }
         });
     }
 
@@ -33,7 +32,7 @@ class TagClass extends Abstract {
      */
     getAllTag() {
         return this.fetchGet({
-            url: "/getAllTag",
+            url: '/getAllTag'
         });
     }
 }

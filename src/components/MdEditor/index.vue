@@ -1,36 +1,28 @@
 <template>
-    <MarkdownEditor
-        :model-value="content"
-        :previewOnly="true"
-    />
+    <MarkdownEditor :model-value="content" :previewOnly="true" />
 </template>
 
 <script lang="ts">
-export default {
-    name: 'MdEditor'
-};
-</script>
-<script lang="ts" setup>
-import { toRefs, onMounted, nextTick } from 'vue';
+import { Vue, Options, Prop } from 'vue-property-decorator';
 import MarkdownEditor from 'md-editor-v3';
-import Viewer from '@/utils/viewer';
 import 'md-editor-v3/lib/style.css';
+import Viewer from '@/utils/viewer';
 
-interface IProps {
-    content: string;
+@Options({
+    name: 'MdEditor',
+    components: {
+        MarkdownEditor
+    }
+})
+export default class MdEditor extends Vue {
+    @Prop({ type: String, default: '' }) content!: string;
+
+    mounted() {
+        this.$nextTick(() => {
+            Viewer(document.querySelector('#md-preview') as HTMLElement);
+        });
+    }
 }
-
-const props = withDefaults(defineProps<IProps>(), {
-    content: ''
-});
-
-const { content } = toRefs(props);
-
-onMounted(() => {
-    nextTick(() => {
-        Viewer(document.querySelector('#md-preview') as HTMLElement);
-    });
-});
 </script>
 
 <style lang="scss">

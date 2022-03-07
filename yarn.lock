@@ -1028,9 +1028,9 @@ ejs@^3.1.6:
     jake "^10.6.1"
 
 element-plus@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-2.0.4.tgz#2f67dd153d61764f703663fadd1754cd6d548ae6"
-  integrity sha512-g/YT/uY6zbNTAl9jL4zT8WRSf/4KG6GB3Y89MCO/lbglHsps5sdDFohcuOb8699BtIXkXsbOzdwmbk9kDHqHxA==
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/element-plus/-/element-plus-2.0.5.tgz#325e2ac98a79312564846830467d4b6e1153137c"
+  integrity sha512-zeyICvdDHSs7nwOGPAfI0B3y1HfH8o6IcKI5OA5JnHxildoQHqMycB0PPdEXAewzrsuCNigo6ihrwD9OuhDLHA==
   dependencies:
     "@ctrl/tinycolor" "^3.4.0"
     "@element-plus/icons-vue" "^1.0.0"
@@ -2355,9 +2355,9 @@ postcss@^5.2.17:
     supports-color "^3.2.3"
 
 postcss@^8.1.10, postcss@^8.4.6:
-  version "8.4.7"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.7.tgz#f99862069ec4541de386bf57f5660a6c7a0875a8"
-  integrity sha512-L9Ye3r6hkkCeOETQX6iOaWZgjp3LL6Lpqm6EtgbKrgqGGteRMNb9vzBfRL96YOSu8o7x3MfIH9Mo5cPJFGrW6A==
+  version "8.4.8"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.8.tgz#dad963a76e82c081a0657d3a2f3602ce10c2e032"
+  integrity sha512-2tXEqGxrjvAO6U+CJzDL2Fk2kPHTv1jQsYkSoMeOis2SsYaXRO2COxTdQp99cYvif9JTXaAk9lYGc3VhJt7JPQ==
   dependencies:
     nanoid "^3.3.1"
     picocolors "^1.0.0"

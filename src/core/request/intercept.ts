@@ -9,10 +9,6 @@ import myMessage from '@/utils/myMessage';
 const instance = axios.create({
     timeout: 5000
 });
-// 是否正在刷新token
-let isRefreshing: boolean = false;
-// 请求列表
-let requestList: Array<any> = [];
 
 instance.interceptors.request.use(
     (request: AxiosRequestConfig) => {

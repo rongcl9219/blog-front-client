@@ -11,4 +11,4 @@ export const SET_COMMENT_USER = 'SET_COMMENT_USER';
 /**
  * @description 设置主题
  */
-export const SET_THEME = 'SET_THEME'
+export const SET_THEME = 'SET_THEME';

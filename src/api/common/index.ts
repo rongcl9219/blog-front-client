@@ -1,5 +1,4 @@
-import Abstract from "@/core/request/http";
-import { UploadToken } from "./types";
+import Abstract from '@/core/request/http';
 
 /**
  * @description 公共接口
@@ -9,7 +8,7 @@ class CommonApi extends Abstract {
      * 获取侧边栏信息
      */
     getAsideInfo() {
-        return this.fetchGet({url: "/getAsideInfo"});
+        return this.fetchGet({ url: '/getAsideInfo' });
     }
 
     /**
@@ -18,7 +17,7 @@ class CommonApi extends Abstract {
      */
     addComment(data: any) {
         return this.fetchPost({
-            url: "/addComment",
+            url: '/addComment',
             data
         });
     }
@@ -29,8 +28,8 @@ class CommonApi extends Abstract {
      */
     getComment(articleId: string) {
         return this.fetchGet({
-            url: "/getComment",
-            params: {articleId}
+            url: '/getComment',
+            params: { articleId }
         });
     }
 
@@ -38,7 +37,7 @@ class CommonApi extends Abstract {
      * 获取时间线数据
      */
     getTimeLine() {
-        return this.fetchGet({url: "/getTimeLine"});
+        return this.fetchGet({ url: '/getTimeLine' });
     }
 }
 

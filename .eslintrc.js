@@ -3,7 +3,7 @@ module.exports = {
     root: true,
     // 全局环境
     env: {
-        node: true,
+        node: true
     },
     // 指定如何解析语法。可以为空，但若不为空，只能配该值
     parser: 'vue-eslint-parser',
@@ -17,14 +17,10 @@ module.exports = {
         sourceType: 'module',
         // 允许解析JSX
         ecmaFeatures: {
-            jsx: true,
-        },
+            jsx: true
+        }
     },
-    extends: [
-        'plugin:vue/vue3-essential',
-        'plugin:@typescript-eslint/recommended',
-        'prettier',
-    ],
+    extends: ['plugin:vue/vue3-essential', 'plugin:@typescript-eslint/recommended', 'prettier'],
     rules: {
         'vue/no-multiple-template-root': 'off',
         'array-bracket-spacing': ['error', 'never'], // 是否允许非空数组里面有多余的空格
@@ -157,7 +153,7 @@ module.exports = {
         'no-unneeded-ternary': 'error', // 禁止不必要的嵌套 var isYes = answer === 'warn' ? true : false;
         'no-unreachable': 'error', // 不能有无法执行的代码
         'no-unused-expressions': 'error', // 禁止无用的表达式
-        'no-unused-vars': ['error', {'vars': 'all', 'args': 'after-used'}], // 不能有声明后未被使用的变量或参数
+        'no-unused-vars': ['error', { 'vars': 'all', 'args': 'after-used' }], // 不能有声明后未被使用的变量或参数
         'no-use-before-define': 'error', // 未定义前不能使用
         'no-useless-call': 'error', // 禁止不必要的call和apply
         'no-void': 'error', // 禁用void操作符
@@ -177,7 +173,7 @@ module.exports = {
         'id-match': 'off', // 命名检测
         'require-yield': 'off', // 生成器函数必须有yield
         'semi': ['error', 'always'], // 语句强制分号结尾
-        'semi-spacing': ['off', {'before': false, 'after': true}], // 分号前后空格
+        'semi-spacing': ['off', { 'before': false, 'after': true }], // 分号前后空格
         'sort-vars': 'off', // 变量声明时排序
         'space-after-keywords': ['off', 'always'], // 关键字后面是否要空一格
         'space-before-blocks': ['off', 'always'], // 不以新行开始的块{前面要不要有空格
@@ -195,8 +191,8 @@ module.exports = {
         'wrap-iife': ['error', 'inside'], // 立即执行函数表达式的小括号风格
         'wrap-regex': 'off', // 正则表达式字面量用小括号包起来
         'yoda': ['error', 'never'], // 禁止尤达条件
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": ["off"],
-        "@typescript-eslint/no-inferrable-types": "off",
-    },
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-explicit-any': ['off'],
+        '@typescript-eslint/no-inferrable-types': 'off'
+    }
 };

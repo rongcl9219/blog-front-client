@@ -17,7 +17,8 @@
         "vue-class-component": "^8.0.0-0",
         "vue-property-decorator": "^10.0.0-rc.3",
         "vue-router": "^4.0.13",
-        "vuex": "^4.0.2"
+        "vuex": "^4.0.2",
+        "web-storage-cache": "^1.1.1"
     },
     "devDependencies": {
         "@types/node": "^17.0.21",
@@ -38,7 +39,6 @@
         "vite-plugin-compression": "^0.5.1",
         "vite-plugin-html": "^3.1.0",
         "vite-plugin-svg-icons": "^2.0.1",
-        "vue-tsc": "^0.29.8",
-        "web-storage-cache": "^1.1.1"
+        "vue-tsc": "^0.29.8"
     }
 }

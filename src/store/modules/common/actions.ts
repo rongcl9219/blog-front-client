@@ -1,4 +1,4 @@
-import { ActionTree, Commit, Dispatch } from 'vuex';
+import { ActionTree, Commit } from 'vuex';
 import { CommonState } from './states';
 import { RootState } from '../../index.d';
 import { SET_WEB_INFO } from './types';

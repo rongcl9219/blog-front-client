@@ -1,19 +1,19 @@
 /**
  * @description 路由
  */
-const HomePage = () => import(/* webpackChunkName: "home-page" */ '@/views/Home/index.vue')
+const HomePage = () => import('@/views/Home/index.vue');
 
-const HomeArticle = () => import(/* webpackChunkName: "home-article" */ '@/views/Article/index.vue')
+const HomeArticle = () => import('@/views/Article/index.vue');
 
-const ArticleList = () => import(/* webpackChunkName: "home-articleList" */ '@/views/ArticleList/index.vue')
+const ArticleList = () => import('@/views/ArticleList/index.vue');
 
-const ClassTag = () => import(/* webpackChunkName: "home-classTag" */ '@/views/ClassTag/index.vue')
+const ClassTag = () => import('@/views/ClassTag/index.vue');
 
-const About = () => import(/* webpackChunkName: "home-about" */ '@/views/About/index.vue')
+const About = () => import('@/views/About/index.vue');
 
-const TimeLine = () => import(/* webpackChunkName: "home-timeLine" */ '@/views/TimeLine/index.vue')
+const TimeLine = () => import('@/views/TimeLine/index.vue');
 
-const Search = () => import(/* webpackChunkName: "home-search" */ '@/views/Search/index.vue')
+const Search = () => import('@/views/Search/index.vue');
 
 export default [
     {

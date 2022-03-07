@@ -6,21 +6,19 @@
 </template>
 
 <script lang="ts">
+import { Vue, Options, Prop } from 'vue-property-decorator';
 import noDataImage from '@/assets/images/default_img/no_data.png';
-export default {
-    name: 'NoData',
-    props: {
-        noDateText: {
-            type: String,
-            default: '什么都没有'
-        }
-    },
-    computed: {
-        noDataImage() {
-            return noDataImage;
-        }
+
+@Options({
+    name: 'NoData'
+})
+export default class NoData extends Vue {
+    @Prop({ type: String, default: '什么都没有' }) noDateText?: string;
+
+    get noDataImage() {
+        return noDataImage;
     }
-};
+}
 </script>
 
 <style scoped lang="scss">

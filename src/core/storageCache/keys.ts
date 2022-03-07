@@ -1,7 +1,7 @@
 const KEYS: GIObject = {
-        commentUser: 'commentUser',
-        theme: 'adminTheme'
-    },
+    commentUser: 'commentUser',
+    theme: 'adminTheme'
+},
     NameSpace = 'BLOG_FRONT';
 
 for (const key in KEYS) {

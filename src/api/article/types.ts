@@ -1,4 +1,4 @@
-import { Pagination } from "@/api/commonTypes";
+import { Pagination } from '@/api/commonTypes';
 
 /**
  * 文章列表接口参数

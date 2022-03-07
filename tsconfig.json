@@ -6,7 +6,7 @@
         "moduleResolution": "node",
         "strict": true,
         "jsx": "preserve",
-        "sourceMap": true,
+        "sourceMap": false,
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "lib": ["esnext", "dom"],
@@ -14,7 +14,10 @@
         "paths": {
             "@/*": ["src/*"]
         },
-        "types": ["vite-plugin-svg-icons/client"]
+        "types": ["vite-plugin-svg-icons/client"],
+        "experimentalDecorators": true,
+        "strictPropertyInitialization": true,
+        "skipLibCheck": true
     },
     "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
     "references": [{ "path": "./tsconfig.node.json" }]
