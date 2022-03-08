@@ -5,7 +5,7 @@ const HomePage = () => import('@/views/Home/index.vue');
 
 const HomeArticle = () => import('@/views/Article/index.vue');
 
-const ArticleList = () => import('@/views/ArticleList/index.vue');
+const List = () => import('@/views/List/index.vue');
 
 const ClassTag = () => import('@/views/ClassTag/index.vue');
 
@@ -34,9 +34,9 @@ export default [
         }
     },
     {
-        path: '/articleList',
-        name: 'ArticleList',
-        component: ArticleList,
+        path: '/list',
+        name: 'List',
+        component: List,
         meta: {
             home: true
         }
@@ -61,14 +61,6 @@ export default [
         path: '/timeLine',
         name: 'TimeLine',
         component: TimeLine,
-        meta: {
-            home: true
-        }
-    },
-    {
-        path: '/articleList',
-        name: 'ArticleList',
-        component: ArticleList,
         meta: {
             home: true
         }

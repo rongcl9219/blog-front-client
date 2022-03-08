@@ -30,7 +30,7 @@ export default {
                 .then();
         },
         toggleHomeAside() {
-            store.dispatch('setting/toggleHomeAside').then();
+            store.dispatch('common/toggleHomeAside').then();
         },
         pageScrollTo(topHeight: number): Promise<void> {
             const topH = topHeight || 0;

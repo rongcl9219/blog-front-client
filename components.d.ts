@@ -4,13 +4,17 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ArticleCard: typeof import('./src/components/ArticleCard/index.vue')['default']
+    ArticleList: typeof import('./src/components/ArticleList/index.vue')['default']
     Aside: typeof import('./src/components/Layout/Aside/index.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElDivider: typeof import('element-plus/es')['ElDivider']
     ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    ElTag: typeof import('element-plus/es')['ElTag']
     Emoji: typeof import('./src/components/Emoji/index.vue')['default']
     Footer: typeof import('./src/components/Layout/Footer/index.vue')['default']
     Header: typeof import('./src/components/Layout/Header/index.vue')['default']

@@ -7,5 +7,6 @@ import 'element-plus/theme-chalk/src/notification.scss';
 import '@/style/element-plus-fix.scss';
 import '@/style/reset.scss';
 import '@/style/theme/index.scss';
+import '@/style/main.scss';
 import 'nprogress/nprogress.css';
 import '@/assets/font/zcool/stylesheet.css';
