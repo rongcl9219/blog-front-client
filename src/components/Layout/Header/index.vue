@@ -2,12 +2,12 @@
     <header class="header">
         <div class="header-box">
             <router-link class="home-link" to="/"><h1>火星的青青草原</h1></router-link>
-            <HeaderSlider/>
+            <HeaderSlider />
         </div>
     </header>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { Vue, Options } from 'vue-property-decorator';
 import HeaderSlider from './components/Slider.vue';
 import { Action } from 'vuex-class';
@@ -37,7 +37,7 @@ export default class HomeHeader extends Vue {
     padding: 15px 30px;
     box-sizing: border-box;
     background-color: #fff;
-    box-shadow: 0 1px 8px 0 rgba(#000, .1);
+    box-shadow: 0 1px 8px 0 rgba(#000, 0.1);
     z-index: 1;
 
     .header-box {
@@ -55,8 +55,9 @@ export default class HomeHeader extends Vue {
         color: #222;
 
         h1 {
-            font-weight: 600;
+            font-weight: 400;
             color: #222;
+            font-family: zcool-kuaile, serif;
         }
     }
 }

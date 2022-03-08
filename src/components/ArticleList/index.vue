@@ -4,7 +4,7 @@
             <ArticleCard
                 v-for="article in articleList"
                 :key="article.articleId"
-                :article-info='article'
+                :article-info="article"
             />
             <el-pagination
                 background
@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Options, Prop } from 'vue-property-decorator';
+import { Vue, Options, Prop, Watch } from 'vue-property-decorator';
 import ArticleCard from '@/components/ArticleCard/index.vue';
 import { ArticleApi } from '@/api';
 
@@ -35,6 +35,11 @@ import { ArticleApi } from '@/api';
 })
 export default class ArticleList extends Vue {
     @Prop({ type: Object, default: {} }) queryObj?: any;
+
+    @Watch('queryObj', { deep: true })
+    onQueryChange() {
+        this.getArticles(1);
+    }
 
     pagination: GIPagination = {
         page: 1,

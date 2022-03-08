@@ -1,7 +1,7 @@
 <template>
     <div class="app-main">
         <router-view v-slot="{ Component }">
-            <transition mode="out-in">
+            <transition mode="out-in" name="fade-transform">
                 <component :is="Component" />
             </transition>
         </router-view>
@@ -48,5 +48,21 @@ export default class HomeMain extends Vue {}
     .el-backtop {
         right: 20px !important;
     }
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+    transition: all 0.5s;
+}
+
+.fade-transform-enter {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
 }
 </style>
