@@ -9,9 +9,6 @@ const getters: GetterTree<CommonState, RootState> = {
     getCommentUser: (state) => {
         return state.commentUser;
     },
-    getTheme: (state) => {
-        return state.theme;
-    },
     getSidebarOpen: (state) => {
         return state.sidebarOpen;
     },

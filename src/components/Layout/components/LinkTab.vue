@@ -1,36 +1,36 @@
 <template>
-    <nav class="header_tabs">
-        <div class="tab_item">
+    <nav class="header-nav">
+        <div class="nav-item">
             <router-link
                 to="/"
                 class="link-home"
                 :class="'HomePage' === activeRoute ? 'route-active' : ''"
             >
-                <el-icon><House /></el-icon>
+                <svg-icon icon-class="home-page" />
                 <span>首页</span>
             </router-link>
         </div>
-        <div class="tab_item">
+        <div class="nav-item">
             <router-link to="/classTag" :class="'ClassTag' === activeRoute ? 'route-active' : ''">
                 <svg-icon icon-class="tag" />
                 <span>分类/标签</span>
             </router-link>
         </div>
-        <div class="tab_item">
+        <div class="nav-item">
             <router-link to="/about" :class="'About' === activeRoute ? 'route-active' : ''">
-                <el-icon><UserFilled /></el-icon>
+                <svg-icon icon-class="user" />
                 <span>关于</span>
             </router-link>
         </div>
-        <div class="tab_item">
+        <div class="nav-item">
             <router-link to="/timeLine" :class="'TimeLine' === activeRoute ? 'route-active' : ''">
                 <svg-icon icon-class="publish-date" />
                 <span>时间线</span>
             </router-link>
         </div>
-        <div class="tab_item">
+        <div class="nav-item">
             <router-link to="/search" :class="'Search' === activeRoute ? 'route-active' : ''">
-                <el-icon><Search /></el-icon>
+                <svg-icon icon-class="search" />
                 <span>搜索</span>
             </router-link>
         </div>
@@ -57,10 +57,10 @@ export default class LinkTab extends Vue {
 </script>
 
 <style scoped lang="scss">
-.header_tabs {
+.header-nav {
     display: flex;
 
-    .tab_item {
+    .nav-item {
         margin: 0 5px;
         font-size: 14px;
         border-radius: 5px;
@@ -69,20 +69,19 @@ export default class LinkTab extends Vue {
         a {
             transition: 0.3s;
             padding: 2px 8px;
-            // TODO
-            //@include font_color('text-color4');
+            color: #9499A0;
 
             &:hover {
-                //@include font_color('text-color2');
+                color: #222;
             }
         }
 
         & a:hover,
         .route-active {
-            //@include font_color('text-color2');
+            color: #222;
         }
 
-        i {
+        .svg-icon {
             margin-right: 3px;
             font-size: 16px;
         }
@@ -90,17 +89,17 @@ export default class LinkTab extends Vue {
 }
 
 .slider {
-    .header_tabs {
+    .header-nav {
         flex-direction: row;
         align-items: center;
     }
 }
 
-#homeAside {
-    .header_tabs {
+.home-aside {
+    .header-nav {
         flex-direction: column;
 
-        .tab_item {
+        .nav-item {
             font-size: 16px;
             font-weight: 600;
             line-height: 1;
@@ -112,7 +111,7 @@ export default class LinkTab extends Vue {
 
 @media screen and (max-width: 720px) {
     .slider {
-        .header_tabs {
+        .header-nav {
             display: none;
         }
     }

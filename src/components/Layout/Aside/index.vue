@@ -1,5 +1,5 @@
 <template>
-    <aside id="homeAside">
+    <aside class='home-aside'>
         <WebInfo/>
         <div @click="toggleHomeAside"><LinkTab/></div>
         <el-divider></el-divider>
@@ -22,8 +22,7 @@ export default class HomeAside extends Vue {}
 </script>
 
 <style scoped lang="scss">
-// TODO
-#homeAside {
+.home-aside {
     position: fixed;
     top: 0;
     left: 0;
@@ -34,11 +33,11 @@ export default class HomeAside extends Vue {}
     transform: translateX(-100%);
     transition: .3s;
     z-index: 15;
-    //@include background_color('background-color1');
+    background-color: #fff;
 }
 
 @media screen and (max-width: 720px) {
-    .home-slide-on #homeAside {
+    .home-slide-on .home-aside {
         transform: translateX(0);
     }
 }

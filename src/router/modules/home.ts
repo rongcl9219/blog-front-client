@@ -19,42 +19,66 @@ export default [
     {
         path: '/',
         name: 'HomePage',
-        component: HomePage
+        component: HomePage,
+        meta: {
+            home: true
+        }
     },
     {
         path: '/article',
         name: 'HomeArticle',
         component: HomeArticle,
-        props: (route: any) => ({ articleId: route.query.articleId })
+        props: (route: any) => ({ articleId: route.query.articleId }),
+        meta: {
+            home: true
+        }
     },
     {
         path: '/articleList',
         name: 'ArticleList',
-        component: ArticleList
+        component: ArticleList,
+        meta: {
+            home: true
+        }
     },
     {
         path: '/classTag',
         name: 'ClassTag',
-        component: ClassTag
+        component: ClassTag,
+        meta: {
+            home: true
+        }
     },
     {
         path: '/about',
         name: 'About',
-        component: About
+        component: About,
+        meta: {
+            home: true
+        }
     },
     {
         path: '/timeLine',
         name: 'TimeLine',
-        component: TimeLine
+        component: TimeLine,
+        meta: {
+            home: true
+        }
     },
     {
         path: '/articleList',
         name: 'ArticleList',
-        component: ArticleList
+        component: ArticleList,
+        meta: {
+            home: true
+        }
     },
     {
         path: '/search',
         name: 'Search',
-        component: Search
+        component: Search,
+        meta: {
+            home: true
+        }
     }
 ];

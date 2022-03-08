@@ -1,6 +1,5 @@
 const KEYS: GIObject = {
-    commentUser: 'commentUser',
-    theme: 'adminTheme'
+    commentUser: 'commentUser'
 },
     NameSpace = 'BLOG_FRONT';
 

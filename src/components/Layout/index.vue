@@ -31,9 +31,8 @@ export default class HomeLayout extends Vue {
 </script>
 
 <style scoped lang="scss">
-// TODO
 .wrapper {
-    //@include background_color('background-color1');
+    background-color: #fff;
 }
 .aside-mask {
     display: none;
@@ -43,7 +42,7 @@ export default class HomeLayout extends Vue {
     width: 100%;
     height: 100vh;
     z-index: 10;
-    //@include background_color('background-color10');
+    background-color: rgba(#000, .35);
 }
 
 @media screen and (max-width: 720px) {

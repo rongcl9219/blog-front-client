@@ -20,10 +20,9 @@ export default {
     font-size: 14px;
     border-top: 1px solid;
     box-sizing: border-box;
-    // TODO
-    //@include border_color('border-color2');
-    //@include background_color('background-color1');
-    //@include font_color('text-color2');
+    border-color: #E3E5E7;
+    background-color: #fff;
+    color: #222;
 
     p {
         line-height: 1.5;
@@ -31,8 +30,7 @@ export default {
 
     a {
         font-size: 14px;
-        // TODO
-        //@include font_color('text-color2');
+        color: #222;
     }
 }
 </style>

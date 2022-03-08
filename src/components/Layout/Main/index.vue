@@ -1,14 +1,12 @@
 <template>
     <div class="app-main">
         <router-view v-slot="{ Component }">
-            <transition name="fade-transform" mode="out-in">
-                <keep-alive>
-                    <component :is="Component" />
-                </keep-alive>
+            <transition mode="out-in">
+                <component :is="Component" />
             </transition>
         </router-view>
         <el-backtop :bottom="70" :visibility-height="300">
-            <div class="to_top">
+            <div class="to-top">
                 <svg-icon icon-class="rocket" />
             </div>
         </el-backtop>
@@ -33,17 +31,16 @@ export default class HomeMain extends Vue {}
         box-shadow: none;
     }
 
-    .to_top {
+    .to-top {
         width: 100%;
         height: 100%;
         text-align: center;
         font-size: 22px;
         line-height: 40px;
         border-radius: 5px;
-        // TODO
-        //@include background_color('background-color1');
-        //@include font_color('text-color2');
-        //@include box_shadow('box-shadow2');
+        background-color: #fff;
+        color: #222;
+        box-shadow: 0 2px 16px 0 rgba(#000, .2);
     }
 }
 

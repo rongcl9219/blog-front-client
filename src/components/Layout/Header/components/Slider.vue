@@ -1,11 +1,10 @@
 <template>
     <div class="slider">
-        <Theme/>
         <LinkTab/>
-        <div class="header_tabs_tool" @click="toggleHomeAside">
-            <span class="tabs_tool_line"></span>
-            <span class="tabs_tool_line"></span>
-            <span class="tabs_tool_line"></span>
+        <div class="header-tabs-tool" @click="toggleHomeAside">
+            <span class="tabs-tool-line"></span>
+            <span class="tabs-tool-line"></span>
+            <span class="tabs-tool-line"></span>
         </div>
     </div>
 </template>
@@ -13,13 +12,11 @@
 <script lang="ts">
 import { Vue, Options } from 'vue-property-decorator';
 import LinkTab from '@/components/Layout/components/LinkTab.vue';
-import Theme from './Theme.vue';
 
 @Options({
     name: 'Slider',
     components: {
-        LinkTab,
-        Theme
+        LinkTab
     }
 })
 export default class Slider extends Vue {
@@ -39,7 +36,7 @@ export default class Slider extends Vue {
     align-items: center;
 }
 
-.header_tabs_tool {
+.header-tabs-tool {
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -47,33 +44,32 @@ export default class Slider extends Vue {
     height: 25px;
     cursor: pointer;
 
-    .tabs_tool_line {
+    .tabs-tool-line {
         display: inline-block;
         width: 25px;
         height: 3px;
         transition: .3s;
-        // TODO
-        //@include background_color('background-color9');
+        background-color: #222;
     }
 }
 
-.home-slide-on .header_tabs_tool {
-    .tabs_tool_line:nth-child(1) {
+.home-slide-on .header-tabs-tool {
+    .tabs-tool-line:nth-child(1) {
         transform: translate(0px, 8px) rotateZ(-45deg);
     }
 
-    .tabs_tool_line:nth-child(2) {
+    .tabs-tool-line:nth-child(2) {
         opacity: 0;
     }
 
-    .tabs_tool_line:nth-child(3) {
+    .tabs-tool-line:nth-child(3) {
         transform: translate(0px, -9px) rotateZ(45deg);
     }
 }
 
 @media screen and (max-width: 720px) {
     .slider {
-        .header_tabs_tool {
+        .header-tabs-tool {
             display: flex;
             margin-left: 15px;
         }
