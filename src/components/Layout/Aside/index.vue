@@ -7,9 +7,10 @@
 </template>
 
 <script lang='ts'>
-import { Vue, Options } from 'vue-property-decorator';
+import { Options, mixins } from 'vue-property-decorator';
 import WebInfo from '@/components/WebInfo/index.vue';
 import LinkTab from '@/components/Layout/components/LinkTab.vue';
+import GMixins from '@/global/mixins';
 
 @Options({
     name: 'HomeAside',
@@ -18,7 +19,7 @@ import LinkTab from '@/components/Layout/components/LinkTab.vue';
         WebInfo
     }
 })
-export default class HomeAside extends Vue {}
+export default class HomeAside extends mixins(GMixins) {}
 </script>
 
 <style scoped lang="scss">

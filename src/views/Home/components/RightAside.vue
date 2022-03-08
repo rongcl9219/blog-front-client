@@ -23,11 +23,12 @@
 </template>
 
 <script lang="ts">
-import { Vue, Options } from 'vue-property-decorator';
+import { Options, mixins } from 'vue-property-decorator';
 import WebInfo from '@/components/WebInfo/index.vue';
 import { ClassApi, TagApi } from '@/api';
 import { TagInfo } from '@/api/tag/types';
 import { ClassInfo } from '@/api/class/types';
+import GMixins from '@/global/mixins';
 
 @Options({
     name: 'RightAside',
@@ -35,7 +36,7 @@ import { ClassInfo } from '@/api/class/types';
         WebInfo
     }
 })
-export default class RightAside extends Vue {
+export default class RightAside extends mixins(GMixins) {
     tagList: Array<TagInfo> = [];
 
     classList: Array<ClassInfo> = [];

@@ -9,7 +9,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Options } from 'vue-property-decorator';
+import { Options, mixins } from 'vue-property-decorator';
+import GMixins from '@/global/mixins';
 import { Getter } from 'vuex-class';
 import HomeHeader from './Header/index.vue';
 import HomeMain from './Main/index.vue';
@@ -25,7 +26,7 @@ import HomeAside from './Aside/index.vue';
         HomeAside
     }
 })
-export default class HomeLayout extends Vue {
+export default class HomeLayout extends mixins(GMixins) {
     @Getter('common/getHomeAside') homeAside!: () => boolean;
 }
 </script>

@@ -31,13 +31,14 @@
 </template>
 
 <script lang="ts">
-import { Vue, Options } from 'vue-property-decorator';
+import { Options, mixins } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
+import GMixins from '@/global/mixins';
 
 @Options({
     name: 'WebInfo'
 })
-export default class WebInfo extends Vue {
+export default class WebInfo extends mixins(GMixins) {
     @Getter('common/getWebInfo') getWebInfo: any;
 
     get webInfo() {

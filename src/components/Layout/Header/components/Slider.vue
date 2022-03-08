@@ -10,8 +10,9 @@
 </template>
 
 <script lang="ts">
-import { Vue, Options } from 'vue-property-decorator';
+import { Options, mixins } from 'vue-property-decorator';
 import LinkTab from '@/components/Layout/components/LinkTab.vue';
+import GMixins from '@/global/mixins';
 
 @Options({
     name: 'Slider',
@@ -19,7 +20,7 @@ import LinkTab from '@/components/Layout/components/LinkTab.vue';
         LinkTab
     }
 })
-export default class Slider extends Vue {
+export default class Slider extends mixins(GMixins) {
     get activeRoute() {
         return this.$route.name;
     }

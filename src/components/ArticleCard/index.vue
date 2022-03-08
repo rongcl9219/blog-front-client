@@ -42,8 +42,9 @@
 </template>
 
 <script lang="ts">
-import { Vue, Options, Prop } from 'vue-property-decorator';
+import { Options, Prop, mixins } from 'vue-property-decorator';
 import { FolderOpened, Calendar } from '@element-plus/icons-vue';
+import GMixins from '@/global/mixins';
 
 @Options({
     name: 'ArticleCard',
@@ -52,7 +53,7 @@ import { FolderOpened, Calendar } from '@element-plus/icons-vue';
         Calendar
     }
 })
-export default class ArticleCard extends Vue {
+export default class ArticleCard extends mixins(GMixins) {
     @Prop({ type: Object, default: {} }) articleInfo!: any;
 
     get coverStyle() {

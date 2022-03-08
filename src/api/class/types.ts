@@ -7,4 +7,5 @@ export interface ClassInfo {
     className: string;
     classType: number;
     classDesc?: string;
+    count: number;
 }

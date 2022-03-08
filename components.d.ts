@@ -26,7 +26,6 @@ declare module 'vue' {
     PageLoading: typeof import('./src/components/PageLoading/index.vue')['default']
     Slider: typeof import('./src/components/Layout/Header/components/Slider.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
-    Theme: typeof import('./src/components/Layout/Header/components/Theme.vue')['default']
     ViewerImg: typeof import('./src/components/ViewerImg/index.vue')['default']
     WebInfo: typeof import('./src/components/WebInfo/index.vue')['default']
   }
