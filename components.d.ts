@@ -8,7 +8,6 @@ declare module 'vue' {
     ArticleList: typeof import('./src/components/ArticleList/index.vue')['default']
     Aside: typeof import('./src/components/Layout/Aside/index.vue')['default']
     Comment: typeof import('./src/components/Comment/index.vue')['default']
-    CommentConent: typeof import('./src/components/Comment/components/CommentConent.vue')['default']
     CommentContent: typeof import('./src/components/Comment/components/CommentContent.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']

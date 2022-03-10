@@ -10,7 +10,7 @@
             <el-scrollbar :height="200">
                 <ul class="emoji-box">
                     <li class="emoji-item" v-for="(icon, key, index) in emojiArr" :key="index">
-                        <span @click="handleItem(key)"
+                        <span @click="handleItem(String(key))"
                             ><svg-icon :icon-class="icon"></svg-icon
                         ></span>
                     </li>
