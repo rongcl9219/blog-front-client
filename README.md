@@ -1,3 +1,4 @@
+# blog-front-client
 # Vue 3 + Typescript + Vite
 
 ## Project setup
