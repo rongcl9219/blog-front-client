@@ -25,81 +25,8 @@
     }
 }
 
-//.article-wrapper {
-//    padding: 40px 30px;
-//    transition: .3s;
-//
-//    .article-content {
-//        position: relative;
-//        margin: 40px 0;
-//        padding: 40px 30px 40px 40px;
-//        border-radius: 5px;
-//        box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.15);
-//        transition: .3s;
-//
-//        .article-title {
-//            text-align: center;
-//            font-size: 30px;
-//            font-weight: 600;
-//        }
-//
-//        .article-subtitle {
-//            margin: 10px 0;
-//            text-align: center;
-//            font-size: 22px;
-//            font-weight: 600;
-//            font-family: '楷体', serif;
-//            color: rgba(0, 0, 0, .65);
-//        }
-//
-//        .article-info {
-//            text-indent: 2em;
-//            font-size: 16px;
-//            font-weight: 400;
-//            font-family: '新宋体', serif;
-//            line-height: 22px;
-//        }
-//
-//        .article-more {
-//            display: flex;
-//            justify-content: center;
-//            align-items: center;
-//            font-size: 14px;
-//            color: #666;
-//            margin: 10px;
-//
-//            .icon {
-//                margin: 0 5px;
-//            }
-//
-//            .el-icon-third-yuan {
-//                font-size: 12px;
-//                transform: scale(0.5);
-//            }
-//
-//            .underline {
-//                margin-right: 5px;
-//                position: relative;
-//                border-bottom: 1px solid #222;
-//                cursor: pointer;
-//            }
-//        }
-//
-//        .article-body {
-//            margin: 30px 0;
-//        }
-//    }
-//}
-
 @media screen and (max-width: 720px) {
     .wrapper {
         display: block;
     }
-    //.article-wrapper {
-    //    padding: 20px 15px;
-    //
-    //    .article-content {
-    //        margin: 20px 0;
-    //    }
-    //}
 }

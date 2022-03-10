@@ -11,6 +11,7 @@
         "axios": "^0.26.0",
         "element-plus": "^2.0.4",
         "md-editor-v3": "^1.10.2",
+        "mint-filter": "^3.0.1",
         "nprogress": "^0.2.0",
         "viewerjs": "^1.10.4",
         "vue": "^3.2.25",

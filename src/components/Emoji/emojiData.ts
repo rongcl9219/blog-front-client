@@ -1,4 +1,4 @@
-const emojiData = {
+const emojiData: GIObject = {
     '天使': 'angel',
     '生气': 'anger',
     '眨眼': 'blink',

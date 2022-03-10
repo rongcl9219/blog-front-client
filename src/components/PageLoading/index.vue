@@ -51,7 +51,7 @@ $loader-direction: normal;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ffffff;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;

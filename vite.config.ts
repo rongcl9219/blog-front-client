@@ -42,7 +42,7 @@ export default defineConfig(({ command }) => {
             }),
             createSvgIconsPlugin({
                 // 指定需要缓存的图标文件夹
-                iconDirs: [pathResolve('src/svg/icons')],
+                iconDirs: [pathResolve('src/svg/icons'), pathResolve('src/svg/emoji')],
                 // 指定symbolId格式
                 symbolId: 'icon-[dir]-[name]'
             })

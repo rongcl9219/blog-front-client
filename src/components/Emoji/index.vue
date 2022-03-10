@@ -31,9 +31,9 @@ import emojiArr from './emojiData';
 import { ElPopover } from 'element-plus';
 
 @Options({
-    name: 'EmojiIndex'
+    name: 'Emoji'
 })
-export default class EmojiIndex extends Vue {
+export default class Emoji extends Vue {
     get emojiArr() {
         return emojiArr;
     }
@@ -74,7 +74,13 @@ export default class EmojiIndex extends Vue {
     }
 }
 .input-icon {
+    position: absolute;
+    bottom: 22px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
     padding: 0;
     border: none;
+    background-color: #00aeec;
 }
 </style>
