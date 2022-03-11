@@ -35,11 +35,11 @@ export default class MdEditor extends mixins(Viewer) {
 <style lang="scss">
 .md-preview-wrapper {
     img {
-        cursor: zoom-in;
+        cursor: zoom-in !important;
     }
 
     figure {
-        display: block;
+        display: block !important;
     }
 }
 </style>
