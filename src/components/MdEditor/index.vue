@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Options, Prop, Watch } from 'vue-property-decorator';
+import { Options, Prop, Watch, mixins } from 'vue-property-decorator';
 import MarkdownEditor from 'md-editor-v3';
 import 'md-editor-v3/lib/style.css';
 import Viewer from '@/utils/viewer';
@@ -14,19 +14,19 @@ import Viewer from '@/utils/viewer';
         MarkdownEditor
     }
 })
-export default class MdEditor extends Vue {
+export default class MdEditor extends mixins(Viewer) {
     @Prop({ type: String, default: '' }) content!: string;
 
     @Watch('content')
     onContentChange() {
         this.$nextTick(() => {
-            Viewer(document.getElementById('md-preview') as HTMLElement);
+            this.updateViewer('#md-editor-v3');
         });
     }
 
     mounted() {
         this.$nextTick(() => {
-            Viewer(document.getElementById('md-preview') as HTMLElement);
+            this.updateViewer('#md-editor-v3');
         });
     }
 }

@@ -1,14 +1,22 @@
+import { Vue, Options } from 'vue-property-decorator';
 import Viewer from 'viewerjs';
 import { viewerDefaultOptions } from '@/components/ViewerImg/config';
 import 'viewerjs/dist/viewer.css';
 
-const newViewer = (el: HTMLElement, options?: object) => {
-    if (!el) {
-        return null;
-    }
-    const viewerOptions = Object.assign({}, viewerDefaultOptions, options || {});
+@Options({})
+export default class newViewer extends Vue {
+    viewerObj: any = null;
+    updateViewer = (el: string, options?: object) => {
+        if (this.viewerObj) {
+            this.viewerObj.update();
+        } else {
+            const eleDom = document.querySelectorAll(el)[0] as HTMLElement;
+            if (!eleDom) {
+                return;
+            }
+            const viewerOptions = Object.assign({}, viewerDefaultOptions, options || {});
 
-    return new Viewer(el, viewerOptions);
-};
-
-export default newViewer;
+            this.viewerObj = new Viewer(eleDom, viewerOptions);
+        }
+    };
+}
