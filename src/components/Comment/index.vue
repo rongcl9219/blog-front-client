@@ -324,8 +324,9 @@ export default class Comment extends Vue {
 
     formatDate = formatDate;
 
-    mounted() {
+    created() {
         this.commentUser = this.getCommentUser;
+        console.log(1);
         this.getArticleComment();
     }
 }

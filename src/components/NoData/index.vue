@@ -23,7 +23,7 @@ export default class NoData extends Vue {
 
 <style scoped lang="scss">
 .no_data {
-    margin-top: 7%;
+    margin: 7% auto 0;
     text-align: center;
 
     p {

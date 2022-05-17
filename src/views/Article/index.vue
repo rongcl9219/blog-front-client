@@ -44,7 +44,7 @@
                     </el-tag>
                 </section>
                 <section class="comment">
-                    <Comment :article-id="articleId"></Comment>
+                    <Comment :article-id="articleId" />
                 </section>
             </div>
         </div>
@@ -77,12 +77,13 @@ export default class Article extends mixins(GMixins) {
 
     pageLoad: boolean = false;
 
-    loadFail: boolean = false;
+    loadFail: boolean = true;
 
     mounted() {
         this.pageLoad = true;
         ArticleApi.getArticleInfo(this.articleId)
             .then((res) => {
+                this.loadFail = false;
                 this.articleData = res.data;
             })
             .catch(() => {
