@@ -40,7 +40,7 @@ const handleSvgItem = (val: string) => {
     emits('onEmojiClick', val);
 };
 
-const handleItem = (key: string) => {
+const handleItem = (key: string | number) => {
     popoverRef.value?.hide();
     handleSvgItem(`[${key}]`);
 };

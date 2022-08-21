@@ -70,6 +70,7 @@ import MdCatalog from '@/components/MdCatalog/MdCatalog.vue';
 
 interface IArticleData extends ArticleInfo {
     articleContent: string;
+    createDate: string;
     tagTypeList: Array<TagInfo>;
     classTypeList: Array<ClassInfo>;
 }
@@ -96,6 +97,7 @@ let articleData = reactive<IArticleData>({
     classType: '',
     tagType: '',
     articleContent: '',
+    createDate: '',
     classTypeList: [],
     tagTypeList: []
 });
