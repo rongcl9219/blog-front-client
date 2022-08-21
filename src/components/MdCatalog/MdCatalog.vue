@@ -1,7 +1,9 @@
 <template>
     <div class="md-catalog">
         <div class="md-catalog-wrapper">
-            <CatalogLink v-for="(catalog, index) in catalogList" :key="index" :catalog-item="catalog" />
+            <el-scrollbar wrap-class="scroll-catalog-wrap" view-class="scroll-catalog-view" max-height="calc(100vh - 250px)">
+                <CatalogLink v-for="(catalog, index) in catalogList" :key="index" :catalog-item="catalog" />
+            </el-scrollbar>
         </div>
     </div>
 </template>
@@ -84,13 +86,13 @@ const loadScroll = debounce(() => {
 }, 100);
 
 onMounted(() => {
-    const ele = document.getElementsByClassName('el-scrollbar__wrap')[0];
+    const ele = document.getElementsByClassName('scroll-wrapper')[0];
     ele.addEventListener('scroll', loadScroll);
 });
 
 onBeforeUnmount(() => {
     commonStore.setActiveCatalog('');
-    const ele = document.getElementsByClassName('el-scrollbar__wrap')[0];
+    const ele = document.getElementsByClassName('scroll-wrapper')[0];
     ele.removeEventListener('scroll', loadScroll);
 });
 </script>

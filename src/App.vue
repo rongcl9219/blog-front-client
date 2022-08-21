@@ -1,5 +1,5 @@
 <template>
-    <el-scrollbar>
+    <el-scrollbar wrap-class="scroll-wrapper" view-class="scroll-view">
         <el-config-provider :locale="zhCn">
             <template v-if="route.meta.home">
                 <HomeLayout/>

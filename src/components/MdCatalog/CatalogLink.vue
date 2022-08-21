@@ -42,7 +42,7 @@ const onHandleClick = () => {
     const hashEle = document.getElementById(eleId.value);
     if (hashEle) {
         commonStore.setActiveCatalog(eleId.value);
-        const scrollEle = document.getElementsByClassName('el-scrollbar__wrap')[0];
+        const scrollEle = document.getElementsByClassName('scroll-wrapper')[0];
         const scrollTop = scrollEle.scrollTop;
         const hashTop = hashEle.getClientRects()[0].top;
 
