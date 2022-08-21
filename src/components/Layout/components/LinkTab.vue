@@ -6,54 +6,46 @@
                 class="link-home"
                 :class="'HomePage' === activeRoute ? 'route-active' : ''"
             >
-                <svg-icon icon-class="home-page" />
+                <svg-icon icon-class="home-page"/>
                 <span>首页</span>
             </router-link>
         </div>
         <div class="nav-item">
             <router-link to="/classTag" :class="'ClassTag' === activeRoute ? 'route-active' : ''">
-                <svg-icon icon-class="tag" />
+                <svg-icon icon-class="tag"/>
                 <span>分类/标签</span>
             </router-link>
         </div>
         <div class="nav-item">
             <router-link to="/about" :class="'About' === activeRoute ? 'route-active' : ''">
-                <svg-icon icon-class="user" />
+                <svg-icon icon-class="user"/>
                 <span>关于</span>
             </router-link>
         </div>
         <div class="nav-item">
             <router-link to="/timeLine" :class="'TimeLine' === activeRoute ? 'route-active' : ''">
-                <svg-icon icon-class="publish-date" />
+                <svg-icon icon-class="publish-date"/>
                 <span>时间线</span>
             </router-link>
         </div>
         <div class="nav-item">
             <router-link to="/search" :class="'Search' === activeRoute ? 'route-active' : ''">
-                <svg-icon icon-class="search" />
+                <svg-icon icon-class="search"/>
                 <span>搜索</span>
             </router-link>
         </div>
     </nav>
 </template>
 
-<script lang="ts">
-import { Vue, Options } from 'vue-property-decorator';
-import { House, UserFilled, Search } from '@element-plus/icons-vue';
+<script lang="ts" setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 
-@Options({
-    name: 'LinkTab',
-    components: {
-        House,
-        UserFilled,
-        Search
-    }
-})
-export default class LinkTab extends Vue {
-    get activeRoute() {
-        return this.$route.name;
-    }
-}
+const route = useRoute();
+
+const activeRoute = computed(() => {
+    return route.name;
+});
 </script>
 
 <style scoped lang="scss">

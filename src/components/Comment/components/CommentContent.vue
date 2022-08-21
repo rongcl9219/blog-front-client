@@ -2,14 +2,13 @@
     <span class="comment-con">
         <template v-for="(item, index) in htmlArr" :key="index">
             <span v-if="item.type === 1" v-text="item.text"></span>
-            <Svg-Comment :svgHtml="item.text" v-else/>
+            <svg-icon :iconClass="item.text" v-else/>
         </template>
     </span>
 </template>
 
-<script lang="ts">
-import { h, resolveComponent } from 'vue';
-import { Vue, Options, Prop } from 'vue-property-decorator';
+<script lang="ts" setup>
+import { reactive, toRefs, onMounted } from 'vue';
 import emojiData from '@/components/Emoji/emojiData';
 
 interface IHtmlObj {
@@ -17,62 +16,55 @@ interface IHtmlObj {
     text: string;
 }
 
-@Options({
-    name: 'CommentContent',
-    components: {
-        'Svg-Comment': {
-            props: {
-                svgHtml: {
-                    type: String,
-                    default: ''
-                }
-            },
-            render() {
-                const com = resolveComponent('svg-icon');
-                return h(com, {iconClass: this.svgHtml});
-            }
-        }
+const props = defineProps({
+    htmlStr: {
+        type: String,
+        default: ''
     }
-})
-export default class CommentContent extends Vue {
-    @Prop({ type: String, default: '' }) htmlStr!: string;
+});
 
-    htmlArr: Array<IHtmlObj> = [];
+const { htmlStr } = toRefs(props);
 
-    mounted() {
-        // 匹配 [] 之间的字符 包括[]
-        let reg = /\[[^[]+]/g;
-        let svgArr = this.htmlStr.match(reg) || [];
-        let textArr = this.htmlStr.split(reg);
-        textArr.forEach((text, index) => {
-            let obj: IHtmlObj = {
-                type: 1,
-                text: ''
-            };
-            try {
-                if (!text) {
-                    let key = svgArr[index].replace(/(\[)|]/g, '');
+const htmlArr = reactive<Array<IHtmlObj>>([]);
 
-                    if (emojiData[key]) {
-                        obj.type = 2;
-                        obj.text = emojiData[key];
-                    } else {
-                        obj.text = svgArr[index];
-                    }
+const initHtml = () => {
+    // 匹配 [] 之间的字符 包括[]
+    const reg = /(\[.*?])/g;
+    const regTest = /(\[)|]/g;
+    const textArr = htmlStr?.value.split(reg);
+    textArr.forEach(text => {
+        let obj: IHtmlObj = {
+            type: 1,
+            text: ''
+        };
+        if (text) {
+            if (regTest.test(text)) {
+                let key = text.replace(regTest, '');
+                if (emojiData[key]) {
+                    obj.type = 2;
+                    obj.text = emojiData[key];
                 } else {
                     obj.text = text;
                 }
-            } catch (e) {
+            } else {
                 obj.text = text;
             }
-            this.htmlArr.push(obj);
-        });
-    }
-}
+            htmlArr.push(obj);
+        }
+    });
+};
+
+onMounted(() => {
+    initHtml();
+});
 </script>
 
-<style scoped>
-.svg-icon {
-    font-size: 16px;
+<style scoped lang="scss">
+.comment-con {
+    font-size: 14px;
+
+    .svg-icon {
+        font-size: 20px;
+    }
 }
 </style>

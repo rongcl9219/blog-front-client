@@ -1,55 +1,56 @@
 <template>
     <div class='right-aside'>
-        <WebInfo class="home-web-info" />
+        <WebInfo class="home-web-info"/>
         <div class="class-box">
-            <h4><svg-icon icon-class="class-manage" />分类</h4>
+            <h4>
+                <svg-icon icon-class="class-manage"/>
+                分类
+            </h4>
             <ul class="class-ul">
-                <li class="li-item" v-for="item in classList" :key="item.classId" @click="pathTo('/list', {type: 'class', id: item.classId})">
+                <li class="li-item" v-for="item in classList" :key="item.classId"
+                    @click="pathTo('/list', {type: 'class', id: item.classId})">
                     <span>{{ item.className }}</span>
                     <span :style="{backgroundColor: getBgColor()}">{{ item.count }}</span>
                 </li>
             </ul>
         </div>
         <el-divider></el-divider>
-        <h4><svg-icon icon-class="tag" />标签</h4>
+        <h4>
+            <svg-icon icon-class="tag"/>
+            标签
+        </h4>
         <div class="tag-box">
             <span class="tag-item"
                   v-for="tag in tagList"
                   :key="tag.tagId"
                   :style="{backgroundColor: getBgColor()}"
-                  @click="pathTo('/list', {type: 'tag', id: tag.tagId})">{{tag.tagName}}</span>
+                  @click="pathTo('/list', {type: 'tag', id: tag.tagId})">{{ tag.tagName }}</span>
         </div>
     </div>
 </template>
 
-<script lang="ts">
-import { Options, mixins } from 'vue-property-decorator';
-import WebInfo from '@/components/WebInfo/index.vue';
+<script lang="ts" setup>
+import { onMounted, reactive } from 'vue';
+import WebInfo from '@/components/WebInfo/WebInfo.vue';
 import { ClassApi, TagApi } from '@/api';
+import { getBgColor } from '@/utils/tools';
+import usePathTo from '@/composables/pathTo';
 import { TagInfo } from '@/api/tag/types';
 import { ClassInfo } from '@/api/class/types';
-import GMixins from '@/global/mixins';
 
-@Options({
-    name: 'RightAside',
-    components: {
-        WebInfo
-    }
-})
-export default class RightAside extends mixins(GMixins) {
-    tagList: Array<TagInfo> = [];
+const { pathTo } = usePathTo();
 
-    classList: Array<ClassInfo> = [];
+let tagList = reactive<Array<TagInfo>>([]);
+let classList = reactive<Array<ClassInfo>>([]);
 
-    mounted() {
-        ClassApi.getClass().then((res) => {
-            this.classList = res.data;
-        });
-        TagApi.getAllTag().then((res) => {
-            this.tagList = res.data;
-        });
-    }
-}
+onMounted(() => {
+    ClassApi.getClass().then((res) => {
+        classList.push(...res.data);
+    });
+    TagApi.getAllTag().then((res) => {
+        tagList.push(...res.data);
+    });
+});
 </script>
 
 <style scoped lang="scss">
@@ -123,7 +124,7 @@ export default class RightAside extends mixins(GMixins) {
         cursor: pointer;
         transition: .3s;
         color: #F1F2F3;
-        box-shadow:  0 2px 10px 1px rgba(#000, .1);;
+        box-shadow: 0 2px 10px 1px rgba(#000, .1);;
     }
 }
 
@@ -133,6 +134,7 @@ export default class RightAside extends mixins(GMixins) {
         top: 0;
         width: auto;
         margin: 20px 0;
+
         .home-web-info {
             display: none;
         }

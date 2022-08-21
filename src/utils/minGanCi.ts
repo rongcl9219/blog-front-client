@@ -2,7 +2,7 @@
  * @description 敏感词数组
  * @type {string[]}
  */
-const words = ['第一代领导',
+const words: string[] = ['第一代领导',
     '第二代领导',
     '第三代领导',
     '第四代领导',
@@ -1649,6 +1649,6 @@ const words = ['第一代领导',
     '手机',
     '销售',
     'sb',
-    'sm']
+    'sm'];
 
-export default words
+export default words;

@@ -6,6 +6,7 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import viteCompression from 'vite-plugin-compression';
 
 const pathResolve = (pathStr: string): string => {
     return resolve(__dirname, '.', pathStr);
@@ -14,17 +15,21 @@ const pathResolve = (pathStr: string): string => {
 /**
  * gzip 压缩
  */
-import viteCompression from 'vite-plugin-compression';
 const viteCompressionOptions = {
     filter: /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i, // 需要压缩的文件
     threshold: 1024, // 文件容量大于这个值进行压缩
+    //algorithm: 'gzip', // 压缩方式
     ext: 'gz', // 后缀名
     deleteOriginFile: false // 压缩后是否删除压缩源文件
 };
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command }) => {
-    let options = {
+export default defineConfig(({command}) => {
+    let buildPlugins = [];
+    if (command === 'build') {
+        buildPlugins.push(viteCompression(viteCompressionOptions));
+    }
+    return {
         plugins: [
             vue(),
             createHtmlPlugin({
@@ -45,7 +50,8 @@ export default defineConfig(({ command }) => {
                 iconDirs: [pathResolve('src/svg/icons'), pathResolve('src/svg/emoji')],
                 // 指定symbolId格式
                 symbolId: 'icon-[dir]-[name]'
-            })
+            }),
+            ...buildPlugins
         ],
         resolve: {
             alias: {
@@ -66,10 +72,10 @@ export default defineConfig(({ command }) => {
             port: 3000, // 端口
             proxy: {
                 '/api': {
-                    target: 'http://localhost:90/',
+                    target: 'http://test.rongcl.cn/',
                     changeOrigin: true,
                     ws: false,
-                    rewrite: (path) => path.replace(/^\/api/, '/')
+                    rewrite: (path) => path.replace(/^\/api/, '/api')
                 }
             },
             hmr: {
@@ -83,6 +89,7 @@ export default defineConfig(({ command }) => {
             cssCodeSplit: true,
             sourcemap: false,
             chunkSizeWarningLimit: 500,
+            minify: 'terser',
             terserOptions: {
                 compress: {
                     // eslint-disable-next-line camelcase
@@ -106,8 +113,4 @@ export default defineConfig(({ command }) => {
             }
         }
     };
-    if (command === 'build') {
-        options.plugins.push(viteCompression(viteCompressionOptions));
-    }
-    return options;
 });

@@ -1,19 +1,19 @@
 /**
  * @description 路由
  */
-const HomePage = () => import('@/views/Home/index.vue');
+const HomePage = () => import('@/views/Home/HomeIndex.vue');
 
-const HomeArticle = () => import('@/views/Article/index.vue');
+const HomeArticle = () => import('@/views/Article/ArticleIndex.vue');
 
-const List = () => import('@/views/List/index.vue');
+const List = () => import('@/views/List/ListIndex.vue');
 
-const ClassTag = () => import('@/views/ClassTag/index.vue');
+const ClassTag = () => import('@/views/ClassTag/ClassTag.vue');
 
-const About = () => import('@/views/About/index.vue');
+const About = () => import('@/views/About/AboutIndex.vue');
 
-const TimeLine = () => import('@/views/TimeLine/index.vue');
+const TimeLine = () => import('@/views/TimeLine/TimeLineIndex.vue');
 
-const Search = () => import('@/views/Search/index.vue');
+const Search = () => import('@/views/Search/SearchIndex.vue');
 
 export default [
     {

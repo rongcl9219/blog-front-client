@@ -1,7 +1,7 @@
 <template>
     <div class="slider">
         <LinkTab/>
-        <div class="header-tabs-tool" @click="toggleHomeAside">
+        <div class="header-tabs-tool" @click="commonStore.toggleHomeAside">
             <span class="tabs-tool-line"></span>
             <span class="tabs-tool-line"></span>
             <span class="tabs-tool-line"></span>
@@ -9,24 +9,11 @@
     </div>
 </template>
 
-<script lang="ts">
-import { Options, mixins } from 'vue-property-decorator';
+<script lang="ts" setup>
+import { useCommonStore } from '@/store/common';
 import LinkTab from '@/components/Layout/components/LinkTab.vue';
-import GMixins from '@/global/mixins';
 
-@Options({
-    name: 'Slider',
-    components: {
-        LinkTab
-    }
-})
-export default class Slider extends mixins(GMixins) {
-    get activeRoute() {
-        return this.$route.name;
-    }
-
-    headerTool: boolean = false;
-}
+const commonStore = useCommonStore();
 </script>
 
 <style scoped lang="scss">
