@@ -10,8 +10,14 @@
 import { computed, onMounted, onBeforeUnmount } from 'vue';
 import CatalogLink from '@/components/MdCatalog/CatalogLink.vue';
 import { useCommonStore } from '@/store/common';
-import { TocItem } from 'md-editor-v3/lib/MdEditor/extensions/MdCatalog';
 import { debounce } from 'lodash';
+
+interface TocItem {
+    text: string;
+    level: number;
+    index: number;
+    children?: Array<TocItem>;
+}
 
 const commonStore = useCommonStore();
 

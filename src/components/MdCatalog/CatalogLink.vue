@@ -8,8 +8,14 @@
 <script lang="ts" setup>
 import { PropType, toRefs, computed } from 'vue';
 import CatalogLink from '@/components/MdCatalog/CatalogLink.vue';
-import { TocItem } from 'md-editor-v3/lib/MdEditor/extensions/MdCatalog';
 import { useCommonStore } from '@/store/common';
+
+interface TocItem {
+    text: string;
+    level: number;
+    index: number;
+    children?: Array<TocItem>;
+}
 
 const commonStore = useCommonStore();
 
