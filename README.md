@@ -1,17 +1,17 @@
 # blog-front-client
 # Vue 3 + Typescript + Vite
 
-## Project setup
+## 安装依赖
 ```
 yarn
 ```
 
-### Compiles and hot-reloads for development
+### 开发环境
 ```
 yarn dev
 ```
 
-### Compiles and minifies for production
+### 打包
 ```
 yarn build
 ```
