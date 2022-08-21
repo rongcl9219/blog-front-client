@@ -9,13 +9,7 @@
 import { PropType, toRefs, computed } from 'vue';
 import CatalogLink from '@/components/MdCatalog/CatalogLink.vue';
 import { useCommonStore } from '@/store/common';
-
-interface TocItem {
-    text: string;
-    level: number;
-    index: number;
-    children?: Array<TocItem>;
-}
+import { TocItem } from './types';
 
 const commonStore = useCommonStore();
 
