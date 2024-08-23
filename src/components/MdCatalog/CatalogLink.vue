@@ -30,8 +30,9 @@ const catalogList = computed(() => {
 });
 
 const eleId = computed(() => {
-    const { text, index } = catalogItem.value;
-    return `${text}-${index + 1}`;
+    const { text } = catalogItem.value;
+    // return `${text}-${index + 1}`;
+    return text;
 });
 
 const isActive = computed(() => {
