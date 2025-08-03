@@ -1,4 +1,4 @@
-@import 'el-color';
+@use 'el-color' as *;
 
 .close-dialog-btn {
     position: absolute;

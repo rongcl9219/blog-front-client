@@ -142,6 +142,7 @@ onMounted(() => {
         .article-content {
             position: relative;
             max-width: 1200px;
+            min-width: 1000px;
             margin: 40px 0;
             padding: 40px 30px 40px 40px;
             border-radius: 5px;
@@ -219,11 +220,11 @@ onMounted(() => {
         }
     }
 
-    .article-body {
-        * {
-            color: #222;
-        }
-    }
+    //.article-body {
+    //    * {
+    //        color: #222;
+    //    }
+    //}
 
     .comment {
         margin: 20px 0;

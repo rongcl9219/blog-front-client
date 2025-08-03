@@ -71,7 +71,7 @@ export default defineConfig(({command}): UserConfig => {
             port: 3000, // 端口
             proxy: {
                 '/api': {
-                    target: 'https://apitest.rongcl.cn/',
+                    target: 'http://localhost:90/',
                     changeOrigin: true,
                     ws: false,
                     rewrite: (path) => path.replace(/^\/api/, '/')

@@ -1,5 +1,5 @@
 <template>
-    <MdPreview :model-value="content" @onGetCatalog="onGetCatalog" :previewOnly="true" />
+    <MdPreview :model-value="content" @onGetCatalog="onGetCatalog" noImgZoomIn :autoFoldThreshold="10000" />
 </template>
 
 <script lang="ts" setup>
@@ -8,50 +8,6 @@ import { HeadList, MdPreview } from 'md-editor-v3';
 import useViewer from '@/composables/viewer';
 import 'md-editor-v3/lib/preview.css';
 import { useCommonStore } from '@/store/common';
-//
-// const getId = (_text: string, index: number) => {
-//     return `${_text}-${index + 1}`;
-// };
-
-// config({
-//     markdownItPlugins(plugins) {
-//         return plugins.map((p) => {
-//             console.log(p.type, p);
-//             if (p.type === 'image') {
-//                 return {
-//                     ...p,
-//                     options: {
-//                         ...p.options,
-//                         classes: 'md-img'
-//                     }
-//                 };
-//             }
-//
-//             return p;
-//         });
-//     }
-// markdownItConfig(mdit) {
-//     console.log(mdit);
-//     // mdit.configure({
-//     //
-//     // });
-//     mdit.renderer.render(tokens, options, env){
-//
-//     };
-// }
-// markedRenderer(renderer) {
-//     renderer.heading = (text, level, raw, _s, index) => {
-//         const id = getId(text, index);
-//         return `<h${level} class="md-title title-level-${level}" id="${id}">${text}</h${level}>`;
-//     };
-//
-//     renderer.image = (href, title, text) => {
-//         return `<img class="md-img" src="${href}" alt="${text}" />`;
-//     };
-//
-//     return renderer;
-// }
-// });
 
 const commonStore = useCommonStore();
 
@@ -72,14 +28,14 @@ const onGetCatalog = (list: Array<HeadList>) => {
 
 onMounted(() => {
     setTimeout(() => {
-        updateViewer('#md-editor-v3');
+        updateViewer('.md-editor-preview-wrapper');
     }, 1000);
 });
 </script>
 
 <style lang="scss">
-.md-preview-wrapper {
-    .md-img {
+.md-editor-preview-wrapper {
+    .md-zoom, img {
         cursor: zoom-in;
     }
 
