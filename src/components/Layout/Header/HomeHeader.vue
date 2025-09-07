@@ -35,7 +35,7 @@ onMounted(() => {
   box-sizing: border-box;
   background-color: #fff;
   box-shadow: 0 1px 8px 0 rgba(#000, 0.1);
-  z-index: 9999;
+  z-index: 999999;
 
   .header-box {
     display: flex;
