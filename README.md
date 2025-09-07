@@ -3,15 +3,15 @@
 
 ## 安装依赖
 ```
-yarn
+npm install
 ```
 
 ### 开发环境
 ```
-yarn dev
+npm run dev
 ```
 
 ### 打包
 ```
-yarn build
+npm run build
 ```

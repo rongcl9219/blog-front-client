@@ -1,25 +1,25 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import NProgress from 'nprogress';
-import Routers from './modules/routes';
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import NProgress from 'nprogress'
+import Routers from './modules/routes'
 
 const routes: Array<RouteRecordRaw> = Routers,
-    router = createRouter({
-        history: createWebHistory(),
-        routes
-    });
+  router = createRouter({
+    history: createWebHistory(),
+    routes
+  })
 
 // 改变进度条的HTML结构
 NProgress.configure({
-    template: '<div class="bar" role="bar"><div class="peg"></div></div>'
-});
+  template: '<div class="bar" role="bar"><div class="peg"></div></div>'
+})
 
-router.beforeEach((to, from, next) => {
-    NProgress.start();
-    return next();
-});
+router.beforeEach((_to, _from, next) => {
+  NProgress.start()
+  return next()
+})
 
 router.afterEach(() => {
-    NProgress.done();
-});
+  NProgress.done()
+})
 
-export default router;
+export default router

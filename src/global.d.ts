@@ -1,9 +1,9 @@
 interface GIObject {
-    [key: string]: any;
+  [key: string]: any;
 }
 
 interface GIPagination {
-    page: number;
-    pageSize: number;
-    total?: number;
+  page: number;
+  pageSize: number;
+  total?: number;
 }

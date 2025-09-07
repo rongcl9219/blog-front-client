@@ -1,5 +1,5 @@
 <template>
-    <div>
-        <NoData/>
-    </div>
+  <div>
+    <NoData />
+  </div>
 </template>

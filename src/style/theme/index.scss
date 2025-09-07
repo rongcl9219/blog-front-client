@@ -1,9 +1,9 @@
 @use 'el-color' as *;
 
 .close-dialog-btn {
-    position: absolute;
-    top: var(--el-dialog-padding-primary);
-    right: var(--el-dialog-padding-primary);
-    height: auto !important;
-    font-size: var(--el-message-close-size, 16px) !important;
+  position: absolute;
+  top: var(--el-dialog-padding-primary);
+  right: var(--el-dialog-padding-primary);
+  height: auto !important;
+  font-size: var(--el-message-close-size, 16px) !important;
 }
