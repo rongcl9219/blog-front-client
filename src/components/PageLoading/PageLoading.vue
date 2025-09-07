@@ -43,6 +43,8 @@ const props = defineProps({
 </script>
 
 <style scoped lang="scss">
+@use "sass:color";
+
 /* ----- Base ----- */
 
 $body-bg: #55c1fa;
@@ -118,7 +120,7 @@ $loader-direction: normal;
     height: 0.25em;
     width: 1em;
     border-radius: 50%;
-    background-color: darken($body-bg, 45%);
+    background-color: color.adjust($body-bg, $lightness: -45%);
     opacity: 0.3;
   }
 }

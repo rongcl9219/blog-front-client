@@ -28,7 +28,7 @@
 import { toRefs, watch, reactive, onMounted } from 'vue'
 import ArticleCard from '@/components/ArticleCard/ArticleCard.vue'
 import { ArticleApi } from '@/api'
-import { ArticleInfo } from '@/api/article/types'
+import type { ArticleInfo } from '@/api/article/types'
 
 const props = defineProps({
   queryObj: {

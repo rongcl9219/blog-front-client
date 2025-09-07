@@ -70,13 +70,6 @@ const onChange = () => {
   }
 }
 
-// eslint-disable-next-line no-unused-vars
-const show = (index: number) => {
-  if (viewerObj.value) {
-    viewerObj.value.view(index || 0)
-  }
-}
-
 watch(
   images,
   () => {
